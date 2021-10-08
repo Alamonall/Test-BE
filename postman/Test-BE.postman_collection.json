@@ -1,0 +1,184 @@
+{
+  "info": {
+    "_postman_id": "ec1ca106-c4b1-4f28-9ad0-c7a4a0afdc7a",
+    "name": "Test-BE",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Attendance",
+      "item": [
+        {
+          "name": "GET One/Many For Academy",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{protocol}}://{{host}}/attendance/:AttendanceId?AcademyId=1&Limit=100&Offset=0",
+              "protocol": "{{protocol}}",
+              "host": ["{{host}}"],
+              "path": ["attendance", ":AttendanceId"],
+              "query": [
+                {
+                  "key": "AcademyId",
+                  "value": "1",
+                  "description": "integer"
+                },
+                {
+                  "key": "Limit",
+                  "value": "100",
+                  "description": "integer"
+                },
+                {
+                  "key": "Offset",
+                  "value": "0",
+                  "description": "integer"
+                }
+              ],
+              "variable": [
+                {
+                  "key": "AttendanceId",
+                  "value": null
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Month Summary For Academy",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{protocol}}://{{host}}/attendance/monthsummary?AcademyId=1&Date=2021-09-07T00:01:00.000Z",
+              "protocol": "{{protocol}}",
+              "host": ["{{host}}"],
+              "path": ["attendance", "monthsummary"],
+              "query": [
+                {
+                  "key": "AcademyId",
+                  "value": "1",
+                  "description": "integer"
+                },
+                {
+                  "key": "Date",
+                  "value": "2021-09-07T00:01:00.000Z",
+                  "description": "timestamp in iso string format"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CREATE One For Academy",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"AcademyId\": 1,\n\t\"StudentId\": 1,\n\t\"SubjectId\": 1,\n\t\"From\": \"2021-10-07T10:00:00.000Z\",\n\t\"Until\": \"2021-10-07T18:00:00.000Z\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{protocol}}://{{host}}/attendance",
+              "protocol": "{{protocol}}",
+              "host": ["{{host}}"],
+              "path": ["attendance"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "UPDATE One",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"AcademyId\": 1,\n\t\"StudentId\": 1,\n\t\"SubjectId\": 1,\n\t\"From\": \"2021-10-07T10:00:00.000Z\",\n\t\"Until\": \"2021-10-07T18:00:00.000Z\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{protocol}}://{{host}}/attendance/:AttendanceId",
+              "protocol": "{{protocol}}",
+              "host": ["{{host}}"],
+              "path": ["attendance", ":AttendanceId"],
+              "variable": [
+                {
+                  "key": "AttendanceId",
+                  "value": null
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE One",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"TenantId\": 1,\n\t\"UserId\": 1,\n\t\"BuildingId\": 1,\n\t\"From\": \"2021-10-07T10:00:00.000Z\",\n\t\"Until\": \"2021-10-07T18:00:00.000Z\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{protocol}}://{{host}}/attendance/:AttendanceId",
+              "protocol": "{{protocol}}",
+              "host": ["{{host}}"],
+              "path": ["attendance", ":AttendanceId"],
+              "variable": [
+                {
+                  "key": "AttendanceId",
+                  "value": null
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "host",
+      "value": "localhost:3000/api/v1"
+    },
+    {
+      "key": "protocol",
+      "value": "http"
+    }
+  ]
+}

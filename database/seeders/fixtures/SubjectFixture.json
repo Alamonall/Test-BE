@@ -1,0 +1,30 @@
+[
+  {
+    "Name": "Theory of computation",
+    "AcademyId": 1
+  },
+  {
+    "Name": "Algorithms",
+    "AcademyId": 1
+  },
+  {
+    "Name": "Computer communications",
+    "AcademyId": 1
+  },
+  {
+    "Name": "Data structures",
+    "AcademyId": 2
+  },
+  {
+    "Name": "Software engineering",
+    "AcademyId": 2
+  },
+  {
+    "Name": "Computer and society",
+    "AcademyId": 3
+  },
+  {
+    "Name": "Programming languages",
+    "AcademyId": 3
+  }
+]
