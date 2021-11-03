@@ -8,6 +8,7 @@ module.exports = (sequelize, DataTypes) => {
           allowNull: false,
           onDelete: 'restrict',
         },
+				as: 'Days',
       });
       Student.belongsTo(models.Academy, {
         foreignKey: {

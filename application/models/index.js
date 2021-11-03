@@ -20,7 +20,7 @@ sequelize = new Sequelize(
   {
     host: process.env.DB_HOST,
     dialect: process.env.DB_DIALECT,
-    logging: false,
+    logging: console.log,
   },
 );
 
